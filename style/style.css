@@ -25,3 +25,13 @@ body {
     width: 200px;
     cursor: pointer;
 }
+
+.tracker-wrapper { 
+    color: white;
+    border: 1px solid white;
+    text-align: center;
+}
+
+.tracker-wrapper h3 {
+    margin-top: 20px;
+}

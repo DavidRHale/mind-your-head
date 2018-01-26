@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Nav from './components/Nav';
 import Home from './components/Home';
+import Tracker from './components/Tracker';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Nav />
         <Switch>
           <Route exact path="/" component={ Home } />
+          <Route exact path="/tracker" component={ Tracker } />
         </Switch>
       </div>
     </BrowserRouter>
