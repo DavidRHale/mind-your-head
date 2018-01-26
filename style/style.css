@@ -1,0 +1,27 @@
+body {
+    background-color: cornflowerblue;
+}
+
+.navbar,
+.navbar-brand,
+.navbar-light .navbar-brand, 
+.navbar-light .navbar-toggler,
+.navbar-toggle-item {
+    background-color: cornflowerblue;
+    color: white;    
+}
+
+.main-header {
+    color: white;
+    font-size: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.get-started-button {
+    font-size: 20px;
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}
