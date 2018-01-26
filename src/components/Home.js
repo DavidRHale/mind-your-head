@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 
 class Home extends React.Component {
   render() {
@@ -6,10 +7,10 @@ class Home extends React.Component {
       <div className="container">
         <div className="col justify-content-md-center text-center">
           <h1 className="main-header">Mind Your Head</h1>
-          <div className="row">
-            <button className="col btn btn-primary get-started-button">Self-Care Pathway</button>
-            <button className="col btn btn-primary get-started-button">Health Behaviour Tracker</button>
-            <button className="col btn btn-primary get-started-button">Information And Resources</button>
+          <div className="row button-wrapper">
+            <Link to="/" className="col btn btn-primary get-started-button">Self-Care Pathway</Link>
+            <Link to="/tracker" className="col btn btn-primary get-started-button">Health Behaviour</Link>
+            <Link to="/" className="col btn btn-primary get-started-button">Information And Resources</Link>
           </div>
         </div>
       </div>

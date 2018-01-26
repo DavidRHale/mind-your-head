@@ -1,5 +1,6 @@
 import React from 'react';
 import InputSlider from 'react-input-slider';
+import { Link } from 'react-router-dom';
 
 class Tracker extends React.Component {
   constructor(props) {
@@ -12,9 +13,27 @@ class Tracker extends React.Component {
 
   render() {
     return (
-      <div className="container tracker-wrapper">
-        <h3>Model</h3>
-        <input type="range" value={this.state.value} onChange={event => { this.setState({ moodValue: event.target.value }) }} />
+      <div className="tracker-wrapper">
+        <div className="input-section">
+          <div className="input-wrapper">
+            <h3>Mood</h3>
+            <input type="range" value={this.state.value} onChange={event => { this.setState({ moodValue: event.target.value }) }} />
+          </div>
+          <div className="input-wrapper">
+            <h3>Anxiety</h3>
+            <input type="range" value={this.state.value} onChange={event => { this.setState({ moodValue: event.target.value }) }} />
+          </div>
+          <div className="input-wrapper">
+            <h3>Exercise</h3>
+            <input type="range" value={this.state.value} onChange={event => { this.setState({ moodValue: event.target.value }) }} />
+          </div>
+          <div className="input-wrapper">
+            <h3>Appetite</h3>
+            <input type="range" value={this.state.value} onChange={event => { this.setState({ moodValue: event.target.value }) }} />
+          </div>
+        </div>
+        <div className="graph-wrapper">
+        </div>
       </div>
     );
   }
