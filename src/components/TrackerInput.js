@@ -9,13 +9,13 @@ class TrackerInput extends React.Component {
     super(props);
 
     this.state = {
-      mood: 50,
+      mood: 5,
       moodAdded: false,
-      anxiety: 50,
+      anxiety: 5,
       anxietyAdded: false,
-      sleep: 50,
+      sleep: 5,
       sleepAdded: false,
-      social: 50,
+      social: 5,
       socialAdded: false,
       exercise: 0,
       exerciseAdded: false

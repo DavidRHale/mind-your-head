@@ -9,6 +9,8 @@ class TrackerSliderInput extends React.Component {
           type="range" 
           value={this.props.value} 
           onChange={ this.props.onChange } 
+          min="0"
+          max="10"
         />
         <button className="btn btn-primary" onClick={ this.props.onClick }>Add</button>
       </div>

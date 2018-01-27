@@ -18,11 +18,10 @@ class Tracker extends React.Component {
   }
 
   componentDidMount() {
-    fire.database().ref('trackerScores').once('value').then((snapshot) => {      
+    fire.database().ref('trackerScores').orderByChild('date').once('value').then((snapshot) => {      
       const data = Object.values(snapshot.val());
       this.setState({ data });
     });
-
   }
 
   onSubmit(event) {
