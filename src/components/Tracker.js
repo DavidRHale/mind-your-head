@@ -1,23 +1,26 @@
 import React from 'react';
 import InputSlider from 'react-input-slider';
 import { Link } from 'react-router-dom';
+import { LineChart, Line } from 'recharts';
 
 import fire from '../firebase';
+import TrackerGraph from './TrackerGraph';
 
 class Tracker extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      scores: []
+      data: []
     }
 
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   componentDidMount() {
-    fire.database().ref('trackerScores').once('value').then((snapshot) => {
-      this.setState({ scores: Object.values(snapshot.val()) });
+    fire.database().ref('trackerScores').once('value').then((snapshot) => {      
+      const data = Object.values(snapshot.val());
+      this.setState({ data });
     });
 
   }
@@ -31,7 +34,12 @@ class Tracker extends React.Component {
 
   render() {
     return (
-      <Link to="/tracker/input" className="btn btn-primary">How was your day?</Link>
+      <div>
+        <TrackerGraph 
+          data={this.state.data}
+        />
+        <Link to="/tracker/input" className="btn btn-primary">How was your day?</Link>
+      </div>
     );
   }
 }

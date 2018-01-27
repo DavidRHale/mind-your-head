@@ -85,13 +85,16 @@ class TrackerInput extends React.Component {
           onClick={event => { 
             event.preventDefault();
             this.setState({ exerciseAdded: true });
+
+            const now = Date.now();
+
             const scores = {
               mood: this.state.mood,
               anxiety: this.state.anxiety,
               sleep: this.state.sleep,
               social: this.state.social,
               exercise: this.state.exercise,
-              time: Date.now()
+              date: now
             }
         
             fire.database().ref('trackerScores').push( scores );
