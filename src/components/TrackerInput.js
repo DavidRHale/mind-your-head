@@ -30,7 +30,7 @@ class TrackerInput extends React.Component {
         <TrackerSliderInput 
           title="Mood" 
           value={this.state.mood}
-          onChange={event => this.setState({ mood: event.target.value })}
+          onChange={event => this.setState({ mood: Math.trunc(event.target.value) })}
           onClick={event => { 
             event.preventDefault();
             this.setState({ moodAdded: true });
@@ -43,7 +43,7 @@ class TrackerInput extends React.Component {
         <TrackerSliderInput 
           title="Anxiety"
           value={this.state.anxiety}
-          onChange={event => this.setState({ anxiety: event.target.value })}
+          onChange={event => this.setState({ anxiety: Math.trunc(event.target.value) })}
           onClick={event => { 
             event.preventDefault();
             this.setState({ anxietyAdded: true });
@@ -56,7 +56,7 @@ class TrackerInput extends React.Component {
         <TrackerSliderInput 
           title="Sleep" 
           value={this.state.sleep}
-          onChange={event => this.setState({ sleep: event.target.value })}
+          onChange={event => this.setState({ sleep: Math.trunc(event.target.value) })}
           onClick={event => { 
             event.preventDefault();
             this.setState({ sleepAdded: true });
@@ -69,7 +69,7 @@ class TrackerInput extends React.Component {
         <TrackerSliderInput 
           title="Social" 
           value={this.state.social}
-          onChange={event => this.setState({ social: event.target.value })}
+          onChange={event => this.setState({ social: Math.trunc(event.target.value) })}
           onClick={event => { 
             event.preventDefault();
             this.setState({ socialAdded: true });
@@ -81,7 +81,7 @@ class TrackerInput extends React.Component {
       return (
         <TrackerDropdownInput 
           title="Exercise" 
-          onChange={event => this.setState({ exercise: event.target.value })}
+          onChange={event => this.setState({ exercise: Math.trunc(event.target.value) })}
           onClick={event => { 
             event.preventDefault();
             this.setState({ exerciseAdded: true });
@@ -94,9 +94,7 @@ class TrackerInput extends React.Component {
               time: Date.now()
             }
         
-            const data = JSON.stringify(scores);
-        
-            fire.database().ref('trackerScores').push( data );
+            fire.database().ref('trackerScores').push( scores );
           } }/>
       );
     }
