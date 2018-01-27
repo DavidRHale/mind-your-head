@@ -7,6 +7,26 @@ body {
   align-items: center;
 }
 
+.slider-icon {
+  margin: 0 2.5%;
+  height: 150px;
+  width: 150px;
+}
+
+.slider-row-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+@media(max-width: 767px) {
+  .slider-icon {
+    flex: 1;
+    height: 40px;
+    width: 40px;
+  }
+}
+
 .navbar,
 .navbar-brand,
 .navbar-light .navbar-brand, 
@@ -103,7 +123,7 @@ input[type=range]::-ms-track {
 input[type=range] {
     -webkit-appearance: none;
     margin: 18px 0;
-    width: 60%;
+    width: 100%;
   }
   input[type=range]:focus {
     outline: none;
