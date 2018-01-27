@@ -9,10 +9,17 @@ class Tracker extends React.Component {
     super(props);
 
     this.state = {
-      moodValue: 50
+      scores: {}
     }
 
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    fire.database().ref('trackerScores').once('value').then((snapshot) => {
+      this.setState({ scores: snapshot.val() });
+    });
+    console.log(this.state.scores);
   }
 
   onSubmit(event) {
@@ -23,33 +30,9 @@ class Tracker extends React.Component {
   }
 
   render() {
+    console.log(this.state.scores)
     return (
-      <Link to="/tracker/input">How was your day?</Link>
-      // <div className="tracker-wrapper">
-      //   <div className="input-section">
-      //     <div className="input-wrapper">
-      //       <h3>Mood</h3>
-      //       <form onSubmit={this.onSubmit}>
-      //         <input type="range" value={this.state.value} onChange={event => { this.setState({ moodValue: event.target.value }) }} />
-      //         <button type="submit">Save</button>
-      //       </form>
-      //     </div>
-      //     <div className="input-wrapper">
-      //       <h3>Anxiety</h3>
-      //       <input type="range" value={this.state.value} onChange={event => { this.setState({ moodValue: event.target.value }) }} />
-      //     </div>
-      //     <div className="input-wrapper">
-      //       <h3>Exercise</h3>
-      //       <input type="range" value={this.state.value} onChange={event => { this.setState({ moodValue: event.target.value }) }} />
-      //     </div>
-      //     <div className="input-wrapper">
-      //       <h3>Appetite</h3>
-      //       <input type="range" value={this.state.value} onChange={event => { this.setState({ moodValue: event.target.value }) }} />
-      //     </div>
-      //   </div>
-      //   <div className="graph-wrapper">
-      //   </div>
-      // </div>
+      <Link to="/tracker/input" className="btn btn-primary">How was your day?</Link>
     );
   }
 }
