@@ -106,11 +106,11 @@ class TrackerGraph extends React.Component {
       return (
         <div className="card align-items-right tracker-graph-wrapper">
             <ComposedChart height={this.calculateHeight()} width={this.calculateWidth()} data={ filtered } className="tracker-graph" isAnimationActive={false}>
-              { this.state.showMood ? <Line type="monotone" dataKey="mood" stroke="blue" strokeWidth={3} dot={false}/> : '' }
-              { this.state.showSocial ? <Line type="monotone" dataKey="social" stroke="green" strokeWidth={3} dot={false}/> : '' }
-              { this.state.showSleep ? <Line type="monotone" dataKey="sleep" stroke="red" strokeWidth={3} dot={false}/> : '' }
-              { this.state.showAnxiety ? <Line type="monotone" dataKey="anxiety" stroke="yellow" strokeWidth={3} dot={false}/> : '' }
-              { this.state.showExercise ? <Bar dataKey="exercise" barSize={20} fill="#413ea0" /> : '' }
+              { this.state.showMood ? <Line type="monotone" dataKey="mood" stroke="#005866" strokeWidth={3} dot={false}/> : '' }
+              { this.state.showSocial ? <Line type="monotone" dataKey="social" stroke="#EE7A7F" strokeWidth={3} dot={false}/> : '' }
+              { this.state.showSleep ? <Line type="monotone" dataKey="sleep" stroke="#A8C94C" strokeWidth={3} dot={false}/> : '' }
+              { this.state.showAnxiety ? <Line type="monotone" dataKey="anxiety" stroke="#89CBC4" strokeWidth={3} dot={false}/> : '' }
+              { this.state.showExercise ? <Bar dataKey="exercise" barSize={20} fill="#FCDD5E" /> : '' }
               <XAxis type="number" dataKey="date" tickFormatter={ this.formatXAxis } domain={ this.axisDomain() }/>
               <YAxis type="number" domain={[0, 10]} padding={{ left: 0 }} />
             </ComposedChart>
@@ -122,7 +122,6 @@ class TrackerGraph extends React.Component {
   }
 
   render() {
-    console.log(this.state.showMood);
     return (
       <div>
         { this.renderGraph() }
@@ -134,7 +133,7 @@ class TrackerGraph extends React.Component {
             <option value={90}>3 Months</option>
           </select>
           <form>
-            <label className="graph-checkbox" htmlFor="showMood">Mood
+            <label className="graph-checkbox-mood" htmlFor="showMood">Mood
             <input 
               type="checkbox" 
               checked={ this.state.showMood } 
@@ -142,7 +141,7 @@ class TrackerGraph extends React.Component {
               id="showMood"
               onChange={ () => this.setState({ showMood: !this.state.showMood }) }
             /></label>
-            <label htmlFor="showAnxiety">Anxiety
+            <label className="graph-checkbox-anxiety" htmlFor="showAnxiety">Anxiety
             <input 
               type="checkbox" 
               checked={ this.state.showAnxiety } 
@@ -150,7 +149,7 @@ class TrackerGraph extends React.Component {
               id="showAnxiety"
               onChange={ () => this.setState({ showAnxiety: !this.state.showAnxiety }) }
             /></label>
-            <label htmlFor="showSleep">Sleep
+            <label className="graph-checkbox-sleep" htmlFor="showSleep">Sleep
             <input 
               type="checkbox" 
               checked={ this.state.showSleep } 
@@ -158,7 +157,7 @@ class TrackerGraph extends React.Component {
               id="showSleep"
               onChange={ () => this.setState({ showSleep: !this.state.showSleep }) }
             /></label>
-            <label htmlFor="showSocial">Social
+            <label className="graph-checkbox-social" htmlFor="showSocial">Social
             <input 
               type="checkbox" 
               checked={ this.state.showSocial } 
@@ -166,7 +165,7 @@ class TrackerGraph extends React.Component {
               id="showSocial"
               onChange={ () => this.setState({ showSocial: !this.state.showSocial }) }
             /></label>
-            <label htmlFor="showExercise">Exercise
+            <label className="graph-checkbox-exercise" htmlFor="showExercise">Exercise
             <input 
               type="checkbox" 
               checked={ this.state.showExercise } 

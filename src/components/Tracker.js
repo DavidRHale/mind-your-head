@@ -82,7 +82,7 @@ class Tracker extends React.Component {
           <div className="advice-panel">
             Enter your tracking stuff and we can give you some advice!
           </div>
-          <Link to="/tracker/input" className="btn btn-primary">How was your day?</Link>  
+          <Link to="/tracker/input" className="btn btn-primary input-start-button">How was your day?</Link>  
         </div>      
       );
     }

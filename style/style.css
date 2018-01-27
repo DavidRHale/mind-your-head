@@ -1,5 +1,11 @@
+/* // FCDD5E (yellow)
+//EE7A7F (rose)
+// A8C94C (green)
+// 89CBC4 (light-blue) //background
+// 278F9F (dark-blue) */
+
 body {
-    background-color: cornflowerblue;
+    background-color: #89CBC4;
     font-family: 'Dosis', sans-serif;
 }
 
@@ -69,7 +75,7 @@ body {
 .navbar-light .navbar-brand, 
 .navbar-light .navbar-toggler,
 .navbar-toggle-item {
-    background-color: cornflowerblue;
+    background-color: #89CBC4;
     color: white;    
 }
 
@@ -219,7 +225,7 @@ input[type=range] {
     color: transparent;
   }
   input[type=range]::-ms-fill-lower {
-    background: #2a6495;
+    background: #89CBC4;
     border: 0.2px solid #010101;
     border-radius: 2.6px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -280,7 +286,7 @@ input[type=range] {
     color: transparent;
   }
   input[type=range]::-ms-fill-lower {
-    background: #2a6495;
+    background: #89CBC4;
     border: 0.2px solid #010101;
     border-radius: 2.6px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -342,8 +348,32 @@ input[type=range] {
     margin: 0 5px;
   }
 
-  .graph-checkbox {
-    background-color: #2a6495;
+  .graph-checkbox-mood {
+    background-color: #005866;
+    margin-left: 5px;
+    padding: 1%;
+  }
+
+  .graph-checkbox-anxiety {
+    background-color: #89CBC4;
+    margin-left: 5px;
+    padding: 1%;
+  }
+
+  .graph-checkbox-sleep {
+    background-color: #A8C94C;
+    margin-left: 5px;
+    padding: 1%;
+  }
+
+  .graph-checkbox-social {
+    background-color: #EE7A7F;
+    margin-left: 5px;
+    padding: 1%;
+  }
+
+  .graph-checkbox-exercise {
+    background-color: #FCDD5E;
     margin-left: 5px;
     padding: 1%;
   }
@@ -359,4 +389,24 @@ input[type=range] {
 
   .advice-panel {
     padding: 5px;
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+
+  .btn-primary {
+    background-color: #278F9F;
+    border-color: #278F9F;
+  }
+
+  .btn-primary:hover {
+    border-color: #005866;
+    background-color: #005866;
+  }
+
+  .input-start-button {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 15px;
   }
