@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import TrackerSliderInput from './TrackerSliderInput';
 import TrackerDropdownInput from './TrackerDropdownInput';
 import fire from '../firebase';
+import moment from 'moment';
 
 class TrackerInput extends React.Component {
   constructor(props) {
@@ -86,7 +87,7 @@ class TrackerInput extends React.Component {
             event.preventDefault();
             this.setState({ exerciseAdded: true });
 
-            const now = Date.now();
+            const now = moment();
 
             const scores = {
               mood: this.state.mood,

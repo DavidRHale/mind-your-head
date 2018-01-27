@@ -1,9 +1,14 @@
 import React from 'react';
 import fire from '../firebase';
+import moment from 'moment';
 
 class Seeder extends React.Component {
   seed() {
-    const now = Date.now();
+
+    const now = moment().format();
+    const yesterday = moment().subtract(1, 'days').format();
+    console.log(now);
+    console.log(yesterday);
 
     // 1000ms in 1s
     // 60s in 1min
@@ -25,7 +30,7 @@ class Seeder extends React.Component {
         sleep: 8,
         social: 8,
         exercise: 2,
-        date: now
+        date: moment().subtract(7, 'days').format()
       },
       {
         mood: 8,
@@ -33,7 +38,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 7,
         exercise: 0,
-        date: daysAgo(1, now)
+        date: moment().subtract(6, 'days').format()
       },
       {
         mood: 7,
@@ -41,7 +46,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 7,
         exercise: 0,
-        date: daysAgo(2, now)
+        date: moment().subtract(5, 'days').format()
       },
       {
         mood: 6,
@@ -49,7 +54,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 6,
         exercise: 0,
-        date: daysAgo(3, now)
+        date: moment().subtract(4, 'days').format()
       },
       {
         mood: 6,
@@ -57,7 +62,7 @@ class Seeder extends React.Component {
         sleep: 5,
         social: 5,
         exercise: 0,
-        date: daysAgo(4, now)
+        date: moment().subtract(3, 'days').format()
       },
       {
         mood: 5,
@@ -65,7 +70,7 @@ class Seeder extends React.Component {
         sleep: 5,
         social: 6,
         exercise: 1,
-        date: daysAgo(5, now)
+        date: moment().subtract(2, 'days').format()
       },
       {
         mood: 5,
@@ -73,7 +78,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 4,
         exercise: 0,
-        date: daysAgo(6, now)
+        date: moment().subtract(1, 'days').format()
       },
       {
         mood: 3,
@@ -81,7 +86,7 @@ class Seeder extends React.Component {
         sleep: 3,
         social: 4,
         exercise: 0,
-        date: daysAgo(7, now)
+        date: now
       }
     ];
 
