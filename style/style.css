@@ -86,14 +86,6 @@ body {
     margin-bottom: 30px;
 }
 
-.get-started-button {
-    font-size: 20px;
-    margin: 10px;
-    cursor: pointer;
-    padding: 100px 50px;
-    max-width: 95%
-}
-
 .button-link {
     text-decoration: none;
     color: white;
@@ -410,3 +402,25 @@ input[type=range] {
     margin: 0 auto;
     margin-bottom: 15px;
   }
+
+  .get-started-button {
+    font-size: 30px;
+    margin: 10px;
+    cursor: pointer;
+    padding: 100px 50px;
+    max-width: 95%;
+    /* border: 3px white solid; */
+    box-shadow: 1px 1px 1px #333;
+    border-radius: 10px;
+}
+
+.nav-item {
+  margin: 0 40px;
+}
+
+.tracker-header {
+  width: 80%;
+  margin: 10px auto;
+  margin-top: 30px;
+  color: white;   
+}

@@ -96,7 +96,11 @@ class Tracker extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="tracker">
+        <div className="tracker-header">
+          <h1>Health Tracker</h1>
+          <p>Keep an eye on your symptoms and see how they relate to each other find out the best way to look after your health.</p>
+        </div>
         <TrackerGraph 
           data={this.state.data}
           dataEnteredToday={this.setDataEnteredToday}
