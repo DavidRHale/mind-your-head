@@ -14,6 +14,8 @@ class TrackerGraph extends React.Component {
     this.onTimePeriodChange = this.onTimePeriodChange.bind(this);
     this.filterData = this.filterData.bind(this);
     this.formatXAxis = this.formatXAxis.bind(this);
+    this.renderGraph = this.renderGraph.bind(this);
+    this.calculateXDomain = this.calculateXDomain.bind(this);
   }
 
   componentDidMount() {
@@ -21,16 +23,19 @@ class TrackerGraph extends React.Component {
   }
 
   onTimePeriodChange(event) {
+    this.filterData(event.target.value);    
     this.setState({ daysLimiter: event.target.value });
   }
 
   filterData(days) {
     const filtered = [];
 
+    console.log(days);
+
     if (this.props.data) {
       this.props.data.forEach(entry => {
         const now = moment();
-        if(now - moment(entry.date) < moment().subtract(days, 'days')) {
+        if(moment(entry.date) > moment().subtract(days, 'days')) {
           filtered.push(entry);
         }
       });
@@ -40,26 +45,50 @@ class TrackerGraph extends React.Component {
 
   formatXAxis(tickItem) {
     console.log(tickItem);
-    const data = this.filterData();
-    const element = data[tickItem]
-    return moment(element.date).format('Do MMM ha');
+    if (this.state.currentData.length > 0) {
+      const data = this.state.currentData;
+      console.log('data', data)
+      const element = data[tickItem]
+      return moment(element.date).fromNow();
+    }
+    return '';
+  }
+
+  calculateXDomain() {
+    return [0, this.state.daysLimiter];
+  }
+
+  renderGraph() {
+    console.log('pre-render', this.props.data)
+    if (this.props.data.length > 0) {
+
+      const filtered = this.filterData(this.state.daysLimiter);
+
+      return (
+        <div className="tracker-graph-wrapper">
+          <ComposedChart width={400} height={400} data={ filtered } className="tracker-graph">
+            <Line type="monotone" dataKey="mood" stroke="#fff" strokeWidth={3} dot={false}/>
+            <Line type="monotone" dataKey="social" stroke="green" strokeWidth={3} dot={false}/>
+            <Line type="monotone" dataKey="sleep" stroke="red" strokeWidth={3} dot={false}/>
+            <Line type="monotone" dataKey="anxiety" stroke="yellow" strokeWidth={3} dot={false}/>
+            <Bar dataKey="exercise" barSize={20} fill="#413ea0" />
+            {/* <XAxis type="category" domain={ [0, this.state.daysLimiter] } tickFormatter={ this.formatXAxis } tickCount={ this.state.currentData.length }/> */}
+            {/* <YAxis type="number" domain={[0, 10]} /> */}
+          </ComposedChart>
+        </div>
+      );
+    }
+
+    return <div>'Loading'</div>;
   }
 
   render() {
     return (
-      <div className="tracker-graph-wrapper">
-        <ComposedChart width={400} height={400} data={ this.filterData(this.state.daysLimiter) } className="tracker-graph">
-          <Line type="monotone" dataKey="mood" stroke="#fff" strokeWidth={3} dot={false}/>
-          <Line type="monotone" dataKey="social" stroke="green" strokeWidth={3} dot={false}/>
-          <Line type="monotone" dataKey="sleep" stroke="red" strokeWidth={3} dot={false}/>
-          <Line type="monotone" dataKey="anxiety" stroke="yellow" strokeWidth={3} dot={false}/>
-          <Bar dataKey="exercise" barSize={20} fill="#413ea0" />
-          <XAxis tickFormatter={ this.formatXAxis }/>
-          {/* <YAxis type="number" domain={[0, 10]} /> */}
-        </ComposedChart>
+      <div>
+        { this.renderGraph() }
         <select onChange={ this.onTimePeriodChange }>
-          <option value={3}>1 Week</option>
-          <option value={7}>2 Weeks</option>
+          <option value={7}>1 Week</option>
+          <option value={14}>2 Weeks</option>
           <option value={30}>1 Month</option>
           <option value={90}>3 Months</option>
         </select>

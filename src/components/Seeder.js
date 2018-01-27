@@ -30,6 +30,62 @@ class Seeder extends React.Component {
         sleep: 8,
         social: 8,
         exercise: 2,
+        date: moment().subtract(14, 'days').format()
+      },
+      {
+        mood: 8,
+        anxiety: 8,
+        sleep: 6,
+        social: 7,
+        exercise: 0,
+        date: moment().subtract(13, 'days').format()
+      },
+      {
+        mood: 7,
+        anxiety: 7,
+        sleep: 6,
+        social: 7,
+        exercise: 0,
+        date: moment().subtract(12, 'days').format()
+      },
+      {
+        mood: 6,
+        anxiety: 7,
+        sleep: 6,
+        social: 6,
+        exercise: 0,
+        date: moment().subtract(11, 'days').format()
+      },
+      {
+        mood: 6,
+        anxiety: 6,
+        sleep: 5,
+        social: 5,
+        exercise: 0,
+        date: moment().subtract(10, 'days').format()
+      },
+      {
+        mood: 5,
+        anxiety: 4,
+        sleep: 5,
+        social: 6,
+        exercise: 1,
+        date: moment().subtract(9, 'days').format()
+      },
+      {
+        mood: 5,
+        anxiety: 5,
+        sleep: 6,
+        social: 4,
+        exercise: 0,
+        date: moment().subtract(8, 'days').format()
+      },
+      {
+        mood: 8,
+        anxiety: 8,
+        sleep: 8,
+        social: 8,
+        exercise: 2,
         date: moment().subtract(7, 'days').format()
       },
       {
