@@ -3,7 +3,7 @@ import React from 'react';
 class TrackerSliderInput extends React.Component {
   render() {
     return (
-      <div>
+      <div className="input-card card">
         <h2>{ this.props.title }</h2>
         <input 
           type="range" 
