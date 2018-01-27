@@ -336,6 +336,10 @@ input[type=range] {
     margin: 10px auto;
   }
 
+  .advice-input-wrapper {
+    margin-bottom: 300px;
+  }
+
   .graph-options-select {
     width: 25%;
     margin: 2% 5%;
