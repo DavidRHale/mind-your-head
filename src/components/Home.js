@@ -8,7 +8,6 @@ class Home extends React.Component {
         <div className="col justify-content-md-center text-center">
           <h1 className="main-header">Mind Your Head</h1>
           <div className="row button-wrapper">
-            <Link to="/" className="col btn btn-primary get-started-button">Self-Care Pathway</Link>
             <Link to="/tracker" className="col btn btn-primary get-started-button">Health Behaviour</Link>
             <Link to="/" className="col btn btn-primary get-started-button">Information And Resources</Link>
           </div>
