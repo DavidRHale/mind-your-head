@@ -14,10 +14,7 @@ export default () => {
             <NavLink to="/tracker" className="nav-link">Tracker</NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Link</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link disabled" href="#">Disabled</a>
+            <NavLink to="/tracker" className="nav-link">Information</NavLink>          
           </li>
         </ul>
       </div>

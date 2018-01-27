@@ -340,32 +340,47 @@ input[type=range] {
     margin: 0 5px;
   }
 
-  .graph-checkbox-mood {
+  .dark-blue {
     background-color: #005866;
-    margin-left: 5px;
-    padding: 1%;
   }
 
-  .graph-checkbox-anxiety {
-    background-color: #89CBC4;
-    margin-left: 5px;
-    padding: 1%;
+  .light-blue {
+    background-color: #89CBC4;    
   }
 
-  .graph-checkbox-sleep {
-    background-color: #A8C94C;
-    margin-left: 5px;
-    padding: 1%;
+  .green {
+    background-color: #A8C94C;    
   }
 
-  .graph-checkbox-social {
-    background-color: #EE7A7F;
-    margin-left: 5px;
-    padding: 1%;
+  .rose {
+    background-color: #EE7A7F;    
   }
 
-  .graph-checkbox-exercise {
-    background-color: #FCDD5E;
+  .yellow {
+    background-color: #FCDD5E;    
+  }
+
+  .dark-blue-border {
+    border: 5px solid #005866;
+  }
+
+  .light-blue-border {
+    border: 5px solid #89CBC4;    
+  }
+
+  .green-border {
+    border: 5px solid #A8C94C;    
+  }
+
+  .rose-border {
+    border: 5px solid #EE7A7F;    
+  }
+
+  .yellow-border {
+    border: 5px solid #FCDD5E;    
+  }
+
+  .graph-checkbox {
     margin-left: 5px;
     padding: 1%;
   }
@@ -381,6 +396,10 @@ input[type=range] {
 
   .advice-panel {
     padding: 5px;
+    margin: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
   }
 
   .card {
@@ -423,4 +442,11 @@ input[type=range] {
   margin: 10px auto;
   margin-top: 30px;
   color: white;   
+}
+
+.advice-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }

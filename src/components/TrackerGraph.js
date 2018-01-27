@@ -133,7 +133,7 @@ class TrackerGraph extends React.Component {
             <option value={90}>3 Months</option>
           </select>
           <form>
-            <label className="graph-checkbox-mood" htmlFor="showMood">Mood
+            <label className="graph-checkbox dark-blue" htmlFor="showMood">Mood
             <input 
               type="checkbox" 
               checked={ this.state.showMood } 
@@ -141,7 +141,7 @@ class TrackerGraph extends React.Component {
               id="showMood"
               onChange={ () => this.setState({ showMood: !this.state.showMood }) }
             /></label>
-            <label className="graph-checkbox-anxiety" htmlFor="showAnxiety">Anxiety
+            <label className="graph-checkbox light-blue" htmlFor="showAnxiety">Anxiety
             <input 
               type="checkbox" 
               checked={ this.state.showAnxiety } 
@@ -149,7 +149,7 @@ class TrackerGraph extends React.Component {
               id="showAnxiety"
               onChange={ () => this.setState({ showAnxiety: !this.state.showAnxiety }) }
             /></label>
-            <label className="graph-checkbox-sleep" htmlFor="showSleep">Sleep
+            <label className="graph-checkbox green" htmlFor="showSleep">Sleep
             <input 
               type="checkbox" 
               checked={ this.state.showSleep } 
@@ -157,7 +157,7 @@ class TrackerGraph extends React.Component {
               id="showSleep"
               onChange={ () => this.setState({ showSleep: !this.state.showSleep }) }
             /></label>
-            <label className="graph-checkbox-social" htmlFor="showSocial">Social
+            <label className="graph-checkbox rose" htmlFor="showSocial">Social
             <input 
               type="checkbox" 
               checked={ this.state.showSocial } 
@@ -165,7 +165,7 @@ class TrackerGraph extends React.Component {
               id="showSocial"
               onChange={ () => this.setState({ showSocial: !this.state.showSocial }) }
             /></label>
-            <label className="graph-checkbox-exercise" htmlFor="showExercise">Exercise
+            <label className="graph-checkbox yellow" htmlFor="showExercise">Exercise
             <input 
               type="checkbox" 
               checked={ this.state.showExercise } 

@@ -62,18 +62,29 @@ class Tracker extends React.Component {
   renderAdvicePanel() {
     if (this.state.dataEnteredToday) {
       return (
-        <div className="card advice-input-wrapper">        
-          <div className="advice-panel">
-            <h3>Your measurements today:</h3>
-            <ul>
-              <li>Mood: {this.state.scoresToday.mood}</li>
-              <li>Anxiety: {this.state.scoresToday.anxiety}</li>
-              <li>Social: {this.state.scoresToday.social}</li>
-              <li>Sleep: {this.state.scoresToday.sleep}</li>
-              <li>Exercise: {this.parseExercise(this.state.scoresToday.exercise)}</li>
-            </ul>
-            Advice is here for youuu
-          </div>
+        <div className="card advice-input-wrapper">  
+          <div className="advice-wrapper">
+            <div className="advice-panel dark-blue-border">
+              <h4>Mood: { this.state.scoresToday.mood }</h4>
+              <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+            </div>
+            <div className="advice-panel light-blue-border">
+              <h4>Anxiety: { this.state.scoresToday.anxiety }</h4>            
+              <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+            </div>
+            <div className="advice-panel green-border">
+              <h4>Sleep: { this.state.scoresToday.sleep }</h4>            
+              <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+            </div>
+            <div className="advice-panel rose-border">
+              <h4>Social: { this.state.scoresToday.social }</h4>              
+              <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+            </div>
+            <div className="advice-panel yellow-border">
+              <h4>Exercise: { this.state.scoresToday.exercise }</h4>            
+              <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+            </div>
+          </div>      
         </div>
       );
     } else {
