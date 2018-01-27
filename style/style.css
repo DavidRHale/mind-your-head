@@ -472,3 +472,9 @@ input[type=range] {
 .advice-input-wrapper h3 {
   margin: 10px;
 }
+
+.slider-button {
+  padding: 10px;
+  width: 50%;
+  border-radius: 10px;
+}

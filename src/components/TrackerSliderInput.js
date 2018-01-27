@@ -17,7 +17,7 @@ class TrackerSliderInput extends React.Component {
           />
           <img src={this.props.positiveIcon} className="slider-icon-right" alt=""/>
         </div>
-        <button className="btn btn-primary" onClick={ this.props.onClick }>Add</button>
+        <button className="btn btn-primary slider-button" onClick={ this.props.onClick }>Add</button>
       </div>
     );
   }
