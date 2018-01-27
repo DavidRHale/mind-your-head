@@ -51,11 +51,23 @@ class TrackerGraph extends React.Component {
     const filtered = [];
 
     if (this.props.data.length > 0) {
-      console.log('data',this.props.data);
+      let enteredToday = false;
+
       this.props.data.forEach(entry => {
-        console.log('entry', )
+        const thisMidnight = moment( moment().format('YYYY-MM-DD') + ' 00:01:00' ).unix();
+        const nextMidnight = moment( moment().format('YYYY-MM-DD') + ' 23:59:00' ).unix();
+    
+        if (entry.date > thisMidnight && entry.date < nextMidnight) {
+          if (!enteredToday) {
+            enteredToday = true;
+            return filtered.push(entry);
+          } else {
+            return
+          }
+        }
+
         if(moment.unix(entry.date) > moment().subtract(days, 'days')) {
-          filtered.push(entry);
+          return filtered.push(entry);
         }
       });
     }

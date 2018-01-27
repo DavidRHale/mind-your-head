@@ -2,6 +2,7 @@ import React from 'react';
 import InputSlider from 'react-input-slider';
 import { Link } from 'react-router-dom';
 import { LineChart, Line } from 'recharts';
+import moment from 'moment';
 
 import fire from '../firebase';
 import TrackerGraph from './TrackerGraph';
@@ -11,15 +12,18 @@ class Tracker extends React.Component {
     super(props);
 
     this.state = {
-      data: []
+      data: [],
+      dataEnteredToday: false,
+      advice: ''
     }
 
     this.onSubmit = this.onSubmit.bind(this);
+    this.isDataEnteredToday = this.isDataEnteredToday.bind(this);
   }
 
   componentDidMount() {
-    fire.database().ref('trackerScores').orderByChild('date').once('value').then((snapshot) => {      
-      const data = Object.values(snapshot.val());
+    fire.database().ref('trackerScores').orderByChild('date').once('value').then((snapshot) => {
+      const data = Object.values(snapshot.val());      
       this.setState({ data });
     });
   }
@@ -32,6 +36,7 @@ class Tracker extends React.Component {
   }
 
   renderAdvicePanel() {
+    this.isDataEnteredToday();
     if (this.state.advice) {
       return (
         <div>
@@ -44,6 +49,19 @@ class Tracker extends React.Component {
           Enter your tracking stuff and we can give you some advice!
         </div>
       );
+    }
+  }
+
+  isDataEnteredToday() {
+    if (!this.state.dataEnteredToday) {
+      const thisMidnight = moment( moment().format('YYYY-MM-DD') + ' 00:01:00' ).unix();
+      const nextMidnight = moment( moment().format('YYYY-MM-DD') + ' 23:59:00' ).unix();
+
+      this.state.data.forEach(entry => {
+        if (entry.date > thisMidnight && entry.date < nextMidnight) {
+          console.log('entered today');
+        }
+      });
     }
   }
 
