@@ -5,6 +5,7 @@ class TrackerSliderInput extends React.Component {
     return (
       <div className="input-card card">
         <h2>{ this.props.title }</h2>
+        <p>{ this.props.value }</p>
         <div className="slider-row-wrapper">
           <div className="image-box">
             <img src={this.props.negativeIcon} className="slider-icon-left" alt=""/>
