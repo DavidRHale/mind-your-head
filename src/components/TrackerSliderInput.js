@@ -6,7 +6,10 @@ class TrackerSliderInput extends React.Component {
       <div className="input-card card">
         <h2>{ this.props.title }</h2>
         <div className="slider-row-wrapper">
-          <img src={this.props.negativeIcon} className="slider-icon-left" alt=""/>
+          <div className="image-box">
+            <img src={this.props.negativeIcon} className="slider-icon-left" alt=""/>
+            <p>{ this.props.negativeLabel }</p>
+          </div>
           <input 
             className=""
             type="range" 
@@ -15,7 +18,10 @@ class TrackerSliderInput extends React.Component {
             min="0"
             max="10"
           />
-          <img src={this.props.positiveIcon} className="slider-icon-right" alt=""/>
+          <div className="image-box">
+            <img src={this.props.positiveIcon} className="slider-icon-right" alt=""/>
+            <p>{ this.props.positiveLabel }</p>      
+          </div>
         </div>
         <button className="btn btn-primary slider-button" onClick={ this.props.onClick }>Add</button>
       </div>

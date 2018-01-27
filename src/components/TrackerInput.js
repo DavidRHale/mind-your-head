@@ -32,6 +32,8 @@ class TrackerInput extends React.Component {
           title="Mood" 
           negativeIcon="/resources/sad.jpeg"
           positiveIcon="/resources/happy.jpeg"
+          negativeLabel="Bad"
+          positiveLabel="Good"
           value={this.state.mood}
           onChange={event => this.setState({ mood: Math.trunc(event.target.value) })}
           onClick={event => { 
