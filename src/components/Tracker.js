@@ -37,7 +37,7 @@ class Tracker extends React.Component {
 
   renderAdvicePanel() {
     this.isDataEnteredToday();
-    if (this.state.advice) {
+    if (this.state.dataEnteredToday) {
       return (
         <div>
           Advice is here for youuu
@@ -59,7 +59,7 @@ class Tracker extends React.Component {
 
       this.state.data.forEach(entry => {
         if (entry.date > thisMidnight && entry.date < nextMidnight) {
-          console.log('entered today');
+          this.setState({ dataEnteredToday: true });
         }
       });
     }
