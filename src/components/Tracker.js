@@ -14,11 +14,11 @@ class Tracker extends React.Component {
     this.state = {
       data: [],
       dataEnteredToday: false,
-      advice: ''
+      advice: '',
+      scoresToday: {}
     }
 
     this.onSubmit = this.onSubmit.bind(this);
-    // this.isDataEnteredToday = this.isDataEnteredToday.bind(this);
     this.setDataEnteredToday = this.setDataEnteredToday.bind(this);
   }
 
@@ -36,11 +36,42 @@ class Tracker extends React.Component {
     this.state.moodValue = 50;
   }
 
+  parseExercise(value) {
+    switch (value) {
+      case 0:
+        return 'Haven\'t done any';
+        break;
+      
+      case 2: 
+        return 'Mild exercise. Well done!';
+        break;
+
+      case 4:
+        return 'Moderate exercise. That\'s awesome!'
+        break;
+      
+      case 6:
+        return 'Intense exercise. Amazing!'
+        break;
+    
+      default:
+        break;
+    }
+  }
+
   renderAdvicePanel() {
     if (this.state.dataEnteredToday) {
       return (
         <div className="card advice-input-wrapper">        
           <div className="advice-panel">
+            <h3>Your measurements today:</h3>
+            <ul>
+              <li>Mood: {this.state.scoresToday.mood}</li>
+              <li>Anxiety: {this.state.scoresToday.anxiety}</li>
+              <li>Social: {this.state.scoresToday.social}</li>
+              <li>Sleep: {this.state.scoresToday.sleep}</li>
+              <li>Exercise: {this.parseExercise(this.state.scoresToday.exercise)}</li>
+            </ul>
             Advice is here for youuu
           </div>
         </div>
@@ -57,24 +88,11 @@ class Tracker extends React.Component {
     }
   }
   
-  setDataEnteredToday() {
+  setDataEnteredToday(scoresToday) {
     if (!this.state.dataEnteredToday) {
-      this.setState({ dataEnteredToday: true });    
+      this.setState({ dataEnteredToday: true, scoresToday });    
     }
   }
-
-  // isDataEnteredToday() {    
-  //   if (!this.state.dataEnteredToday) {
-  //     const thisMidnight = moment( moment().format('YYYY-MM-DD') + ' 00:01:00' ).unix();
-  //     const nextMidnight = moment( moment().format('YYYY-MM-DD') + ' 23:59:00' ).unix();
-
-  //     this.state.data.forEach(entry => {
-  //       if (entry.date > thisMidnight && entry.date < nextMidnight) {
-  //         this.setState({ dataEnteredToday: true });
-  //       }
-  //     });
-  //   }
-  // }
 
   render() {
     return (

@@ -60,7 +60,7 @@ class TrackerGraph extends React.Component {
         if (entry.date > thisMidnight && entry.date < nextMidnight) {
           if (!enteredToday) {
             enteredToday = true;
-            this.props.dataEnteredToday();
+            this.props.dataEnteredToday(entry);
             return filtered.push(entry);
           } else {
             return
