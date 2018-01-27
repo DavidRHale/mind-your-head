@@ -62,7 +62,8 @@ class Tracker extends React.Component {
   renderAdvicePanel() {
     if (this.state.dataEnteredToday) {
       return (
-        <div className="card advice-input-wrapper">  
+        <div className="card advice-input-wrapper"> 
+          <h3>Here is today's advice, pick something that suits you!</h3>
           <div className="advice-wrapper">
             <div className="advice-panel dark-blue-border">
               <h4>Mood: { this.state.scoresToday.mood }</h4>

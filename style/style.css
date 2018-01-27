@@ -450,3 +450,7 @@ input[type=range] {
   align-items: center;
   justify-content: space-between;
 }
+
+.advice-input-wrapper h3 {
+  margin: 10px;
+}
