@@ -90,7 +90,7 @@ class TrackerInput extends React.Component {
       return (
         <TrackerDropdownInput 
           title="Exercise" 
-          icon="/resoures/exercise.jpeg"
+          icon="/resources/exercise.jpeg"
           onChange={event => this.setState({ exercise: Math.trunc(event.target.value) })}
           onClick={event => { 
             event.preventDefault();

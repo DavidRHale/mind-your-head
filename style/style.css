@@ -28,6 +28,16 @@ body {
   width: 100%;
 }
 
+.dropdown-image-container {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+}
+
+.dropdown-image-container select {
+  width: 25%;
+}
+
 @media(max-width : 1224px) {
   .slider-icon-left,
   .slider-icon-right {
@@ -42,6 +52,15 @@ body {
     height: 40px;
     width: 40px;
   }
+
+  .graph-options-wrapper {
+    margin: 0 auto;
+  }
+
+  /* .tracker-graph {
+    height: 200px;
+    width: 200px;
+  } */
 }
 
 .navbar,
@@ -286,10 +305,43 @@ input[type=range] {
   .tracker-graph-wrapper {
     margin: 0 auto;
     background-color: white;
-    width: 100%;  
     padding: 10px;
+    width: 80%;
   }
 
   .tracker-graph {
     margin: 10px auto;
+  }
+
+  .graph-options-wrapper {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .graph-options-select {
+    width: 25%;
+    margin: 2% 5%;
+  }
+
+  .graph-options-wrapper form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .graph-options-wrapper label {
+    margin-left: 5px;
+    padding: 1%;
+    border-radius: 5px;
+  }
+
+  .graph-options-wrapper input {
+    margin: 0 5px;
+  }
+
+  .graph-checkbox {
+    background-color: #2a6495;
+    margin-left: 5px;
+    padding: 1%;
   }
