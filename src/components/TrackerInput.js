@@ -30,6 +30,8 @@ class TrackerInput extends React.Component {
       return (
         <TrackerSliderInput 
           title="Mood" 
+          negativeIcon="/resources/sad.jpeg"
+          positiveIcon="/resources/happy.jpeg"
           value={this.state.mood}
           onChange={event => this.setState({ mood: Math.trunc(event.target.value) })}
           onClick={event => { 
@@ -43,6 +45,8 @@ class TrackerInput extends React.Component {
       return (
         <TrackerSliderInput 
           title="Anxiety"
+          negativeIcon="/resources/anxious.jpeg"
+          positiveIcon="/resources/calm.jpeg"
           value={this.state.anxiety}
           onChange={event => this.setState({ anxiety: Math.trunc(event.target.value) })}
           onClick={event => { 
@@ -56,6 +60,8 @@ class TrackerInput extends React.Component {
       return (
         <TrackerSliderInput 
           title="Sleep" 
+          negativeIcon="/resources/awake.jpeg"
+          positiveIcon="/resources/sleeping.jpeg"
           value={this.state.sleep}
           onChange={event => this.setState({ sleep: Math.trunc(event.target.value) })}
           onClick={event => { 
@@ -69,6 +75,8 @@ class TrackerInput extends React.Component {
       return (
         <TrackerSliderInput 
           title="Social" 
+          negativeIcon="/resources/unsociable.jpeg"
+          positiveIcon="/resources/sociable.jpeg"
           value={this.state.social}
           onChange={event => this.setState({ social: Math.trunc(event.target.value) })}
           onClick={event => { 
@@ -82,6 +90,7 @@ class TrackerInput extends React.Component {
       return (
         <TrackerDropdownInput 
           title="Exercise" 
+          icon="/resoures/exercise.jpeg"
           onChange={event => this.setState({ exercise: Math.trunc(event.target.value) })}
           onClick={event => { 
             event.preventDefault();
