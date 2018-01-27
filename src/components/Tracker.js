@@ -9,7 +9,7 @@ class Tracker extends React.Component {
     super(props);
 
     this.state = {
-      scores: {}
+      scores: []
     }
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -17,9 +17,9 @@ class Tracker extends React.Component {
 
   componentDidMount() {
     fire.database().ref('trackerScores').once('value').then((snapshot) => {
-      this.setState({ scores: snapshot.val() });
+      this.setState({ scores: Object.values(snapshot.val()) });
     });
-    console.log(this.state.scores);
+
   }
 
   onSubmit(event) {
@@ -30,7 +30,6 @@ class Tracker extends React.Component {
   }
 
   render() {
-    console.log(this.state.scores)
     return (
       <Link to="/tracker/input" className="btn btn-primary">How was your day?</Link>
     );
