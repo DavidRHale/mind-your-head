@@ -9,9 +9,9 @@ class TrackerDropdown extends React.Component {
         <div className="dropdown-image-container">
           <select onChange={ this.props.onChange }>
             <option value="0">None</option>
-            <option value="1">Mild</option>
-            <option value="2">Moderate</option>
-            <option value="3">High</option>
+            <option value="2">Mild</option>
+            <option value="4">Moderate</option>
+            <option value="6">High</option>
           </select>
           <img src={ this.props.icon } className="slider-icon-right"/>
         </div>

@@ -67,7 +67,7 @@ class Seeder extends React.Component {
         anxiety: 4,
         sleep: 5,
         social: 6,
-        exercise: 1,
+        exercise: 4,
         date: moment().subtract(9, 'days').unix()
       },
       {
@@ -75,7 +75,7 @@ class Seeder extends React.Component {
         anxiety: 5,
         sleep: 6,
         social: 4,
-        exercise: 0,
+        exercise: 6,
         date: moment().subtract(8, 'days').unix()
       },
       {
