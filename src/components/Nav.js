@@ -10,11 +10,11 @@ export default () => {
       <Link to="/" className="navbar-brand">Mind Your Head</Link>      
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
+          <li className="nav-item">
             <NavLink to="/tracker" className="nav-link">Tracker</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/tracker" className="nav-link">Information</NavLink>          
+            <NavLink to="/information" className="nav-link">Information</NavLink>          
           </li>
         </ul>
       </div>

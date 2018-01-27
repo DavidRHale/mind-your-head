@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Tracker from './components/Tracker';
 import TrackerInput from './components/TrackerInput';
 import Seeder from './components/Seeder';
+import Info from './components/Info';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -23,6 +24,7 @@ ReactDOM.render(
           <Route exact path="/tracker" component={ Tracker } />
           <Route path="/tracker/input" component={ TrackerInput } />
           <Route path="/tracker/seed" component={ Seeder } />
+          <Route path="/information" component={ Info } />
         </Switch>
       </div>
     </BrowserRouter>
