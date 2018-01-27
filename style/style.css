@@ -313,7 +313,8 @@ input[type=range] {
     margin: 10px auto;
   }
 
-  .graph-options-wrapper {
+  .graph-options-wrapper,
+  .advice-input-wrapper {
     width: 80%;
     margin: 10px auto;
   }
@@ -344,4 +345,17 @@ input[type=range] {
     background-color: #2a6495;
     margin-left: 5px;
     padding: 1%;
+  }
+
+  .input-start-button {
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .input-start-button a {
+    display: inline-block;
+  }
+
+  .advice-panel {
+    padding: 5px;
   }

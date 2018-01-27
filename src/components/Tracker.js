@@ -31,13 +31,32 @@ class Tracker extends React.Component {
     this.state.moodValue = 50;
   }
 
+  renderAdvicePanel() {
+    if (this.state.advice) {
+      return (
+        <div>
+          Advice is here for youuu
+        </div>
+      );
+    } else {
+      return (
+        <div className="advice-panel">
+          Enter your tracking stuff and we can give you some advice!
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div>
         <TrackerGraph 
           data={this.state.data}
         />
-        <Link to="/tracker/input" className="btn btn-primary">How was your day?</Link>
+        <div className="card advice-input-wrapper">
+          { this.renderAdvicePanel() }
+          <Link to="/tracker/input" className="btn btn-primary">How was your day?</Link>
+        </div>
       </div>
     );
   }

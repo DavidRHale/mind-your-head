@@ -69,7 +69,7 @@ class TrackerGraph extends React.Component {
   axisDomain() {
     const min = moment().subtract(this.state.daysLimiter, 'days').unix();
     const max = moment().unix();
-    return [min , max];
+    return [min , max + 10000];
   }
 
   calculateHeight() {
