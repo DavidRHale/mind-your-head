@@ -5,10 +5,8 @@ import moment from 'moment';
 class Seeder extends React.Component {
   seed() {
 
-    const now = moment().format();
-    const yesterday = moment().subtract(1, 'days').format();
-    console.log(now);
-    console.log(yesterday);
+    const now = moment().unix();
+    const yesterday = moment().subtract(1, 'days').unix();
 
     // 1000ms in 1s
     // 60s in 1min
@@ -30,7 +28,7 @@ class Seeder extends React.Component {
         sleep: 8,
         social: 8,
         exercise: 2,
-        date: moment().subtract(14, 'days').format()
+        date: moment().subtract(14, 'days').unix()
       },
       {
         mood: 8,
@@ -38,7 +36,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 7,
         exercise: 0,
-        date: moment().subtract(13, 'days').format()
+        date: moment().subtract(13, 'days').unix()
       },
       {
         mood: 7,
@@ -46,7 +44,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 7,
         exercise: 0,
-        date: moment().subtract(12, 'days').format()
+        date: moment().subtract(12, 'days').unix()
       },
       {
         mood: 6,
@@ -54,7 +52,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 6,
         exercise: 0,
-        date: moment().subtract(11, 'days').format()
+        date: moment().subtract(11, 'days').unix()
       },
       {
         mood: 6,
@@ -62,7 +60,7 @@ class Seeder extends React.Component {
         sleep: 5,
         social: 5,
         exercise: 0,
-        date: moment().subtract(10, 'days').format()
+        date: moment().subtract(10, 'days').unix()
       },
       {
         mood: 5,
@@ -70,7 +68,7 @@ class Seeder extends React.Component {
         sleep: 5,
         social: 6,
         exercise: 1,
-        date: moment().subtract(9, 'days').format()
+        date: moment().subtract(9, 'days').unix()
       },
       {
         mood: 5,
@@ -78,7 +76,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 4,
         exercise: 0,
-        date: moment().subtract(8, 'days').format()
+        date: moment().subtract(8, 'days').unix()
       },
       {
         mood: 8,
@@ -86,7 +84,7 @@ class Seeder extends React.Component {
         sleep: 8,
         social: 8,
         exercise: 2,
-        date: moment().subtract(7, 'days').format()
+        date: moment().subtract(7, 'days').unix()
       },
       {
         mood: 8,
@@ -94,7 +92,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 7,
         exercise: 0,
-        date: moment().subtract(6, 'days').format()
+        date: moment().subtract(6, 'days').unix()
       },
       {
         mood: 7,
@@ -102,7 +100,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 7,
         exercise: 0,
-        date: moment().subtract(5, 'days').format()
+        date: moment().subtract(5, 'days').unix()
       },
       {
         mood: 6,
@@ -110,7 +108,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 6,
         exercise: 0,
-        date: moment().subtract(4, 'days').format()
+        date: moment().subtract(4, 'days').unix()
       },
       {
         mood: 6,
@@ -118,7 +116,7 @@ class Seeder extends React.Component {
         sleep: 5,
         social: 5,
         exercise: 0,
-        date: moment().subtract(3, 'days').format()
+        date: moment().subtract(3, 'days').unix()
       },
       {
         mood: 5,
@@ -126,7 +124,7 @@ class Seeder extends React.Component {
         sleep: 5,
         social: 6,
         exercise: 1,
-        date: moment().subtract(2, 'days').format()
+        date: moment().subtract(2, 'days').unix()
       },
       {
         mood: 5,
@@ -134,7 +132,7 @@ class Seeder extends React.Component {
         sleep: 6,
         social: 4,
         exercise: 0,
-        date: moment().subtract(1, 'days').format()
+        date: moment().subtract(1, 'days').unix()
       },
       {
         mood: 3,

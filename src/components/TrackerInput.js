@@ -87,7 +87,7 @@ class TrackerInput extends React.Component {
             event.preventDefault();
             this.setState({ exerciseAdded: true });
 
-            const now = moment();
+            const now = moment().unix();
 
             const scores = {
               mood: this.state.mood,
