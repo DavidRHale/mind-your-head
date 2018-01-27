@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import TrackerSliderInput from './TrackerSliderInput';
 import TrackerDropdownInput from './TrackerDropdownInput';
+import fire from '../firebase';
 
 class TrackerInput extends React.Component {
   constructor(props) {
@@ -84,7 +85,18 @@ class TrackerInput extends React.Component {
           onClick={event => { 
             event.preventDefault();
             this.setState({ exerciseAdded: true });
-
+            const scores = {
+              mood: this.state.mood,
+              anxiety: this.state.anxiety,
+              sleep: this.state.sleep,
+              social: this.state.social,
+              exercise: this.state.exercise,
+              time: Date.now()
+            }
+        
+            const data = JSON.stringify(scores);
+        
+            fire.database().ref('trackerScores').push( data );
           } }/>
       );
     }
