@@ -35,14 +35,32 @@ body {
   width: 100%;
 }
 
-.dropdown-image-container {
+.dropdown-image-container select {
+  width: 75%;
+  height: 30px;
+}
+
+.dropdown {
   display: flex;
   flex-direction: row;
   align-content: space-around;
 }
 
-.dropdown-image-container select {
-  width: 25%;
+.dropdown-child {
+  margin: 10px;
+}
+
+.dropdown-button {
+  margin: 10px;
+  border-radius: 10px;
+  width: 70%;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media(max-width : 1224px) {
