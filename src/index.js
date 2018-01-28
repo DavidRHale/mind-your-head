@@ -23,7 +23,7 @@ ReactDOM.render(
           <Route exact path="/" component={ Home } />
           <Route exact path="/tracker" component={ Tracker } />
           <Route path="/tracker/input" component={ TrackerInput } />
-          <Route path="/tracker/seed" component={ Seeder } />
+          <Route path="/dev/seed" component={ Seeder } />
           <Route path="/information" component={ Info } />
         </Switch>
       </div>

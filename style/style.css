@@ -490,3 +490,51 @@ input[type=range] {
 .image-box p {
   padding-top: 3px;
 }
+
+.seed-button {
+  margin-top: 50px;
+  margin-left: 15px;
+}
+
+.infocard {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.infocard img {
+  height: 100px;
+  width: 100px;
+}
+
+.infocard .text-content {
+  margin-left: 15px;  
+  margin-top: 10px;
+}
+
+.vote-button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+
+.vote-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.vote-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.vote-button-wrapper p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  margin-left: 5px;
+}

@@ -3,7 +3,7 @@ import fire from '../firebase';
 import moment from 'moment';
 
 class Seeder extends React.Component {
-  seed() {
+  seedHealthData() {
 
     const now = moment().unix();
     const yesterday = moment().subtract(1, 'days').unix();
@@ -146,11 +146,26 @@ class Seeder extends React.Component {
 
     data.forEach(entry => fire.database().ref('trackerScores').push( entry ));
   }
+
+  seedResources() {
+    const resources = [
+      {
+        imageUrl: 'https://www.nightline.ac.uk/wp-content/uploads/2014/04/NLAHomeButtonLogo-270x250.png',
+        title: 'Nightline',
+        description: 'Nightline provides various confidential and anonymous overnight listening, emotional support, information, and supplies services, run by students for students at universities around the world.',
+        upVotes: 0,
+        downVotes: 0
+      }
+    ];
+
+    resources.forEach(entry => fire.database().ref('infoResources').push( entry ));
+  }
   
   render() {
     return (
       <div>
-        <button onClick={this.seed} className="btn btn-danger">Seed</button>
+        <button onClick={this.seedHealthData} className="btn btn-danger seed-button">Seed Health Data</button>
+        <button onClick={this.seedResources} className="btn btn-danger seed-button">Seed Resources</button>
       </div>
     );
   }
