@@ -8,20 +8,29 @@ class Info extends React.Component {
     super(props);
 
     this.state = {
-      infoResources: []
+      infoResources: {}
     }
+
+    this.onUpClick = this.onUpClick.bind(this);
   }
 
   componentDidMount() {
     fire.database().ref('infoResources').once('value').then((snapshot) => {
-      const infoResources = Object.values(snapshot.val());      
-      this.setState({ infoResources });
+      // const infoResources = Object.values(snapshot.val());      
+      this.setState({ infoResources: snapshot.val() });
     });    
   }
 
+  onUpClick(event) {
+    event.preventDefault();
+
+    console.log(event.target.value);
+  }
+
   renderInfoCards() {
-    if (this.state.infoResources.length > 0) {
-      return this.state.infoResources.map(resource => {
+    if (Object.keys(this.state.infoResources).length > 0) {
+      return Object.keys(this.state.infoResources).map(key => {
+        const resource = this.state.infoResources[key];
         return (
           <InfoCard 
             key={ resource.name }
@@ -30,6 +39,30 @@ class Info extends React.Component {
             description={ resource.description }
             upVotes={ resource.upVotes }
             downVotes={ resource.downVotes }
+            onUpClick={ (event) => {
+              fire.database().ref('infoResources/' + key).set({
+                imageUrl: resource.imageUrl,
+                title: resource.title,
+                description: resource.description,
+                upVotes: resource.upVotes + 1,
+                downVotes: resource.downVotes
+              });
+              const infoResources = this.state.infoResources;
+              infoResources[key].upVotes++;
+              this.setState({ infoResources });              
+            } }
+            onDownClick={ (event) => {
+              fire.database().ref('infoResources/' + key).set({
+                imageUrl: resource.imageUrl,
+                title: resource.title,
+                description: resource.description,
+                upVotes: resource.upVotes,
+                downVotes: resource.downVotes + 1
+              });
+              const infoResources = this.state.infoResources;
+              infoResources[key].downVotes++;
+              this.setState({ infoResources });              
+            }  }
           />
         );
       });

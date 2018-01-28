@@ -499,7 +499,7 @@ input[type=range] {
 .infocard {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   padding: 10px;
 }

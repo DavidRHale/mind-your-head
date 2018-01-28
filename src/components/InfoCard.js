@@ -14,11 +14,13 @@ class InfoCard extends React.Component {
         </div>
         <div className="vote-container">
           <div className="vote-button-wrapper">
-            <button className="btn btn-primary vote-button"><span className="fa fa-thumbs-o-up"></span></button>
+            <button className="btn btn-primary vote-button" onClick={ this.props.onUpClick }>
+              <span className="fa fa-thumbs-o-up"></span>
+            </button>
             <p>{ this.props.upVotes }</p>
           </div>
           <div className="vote-button-wrapper">
-            <button className="btn btn-primary vote-button"><span className="fa fa-thumbs-o-down"></span></button>
+            <button className="btn btn-primary vote-button" onClick={ this.props.onDownClick }><span className="fa fa-thumbs-o-down"></span></button>
             <p>{ this.props.downVotes }</p>          
           </div>
         </div>
