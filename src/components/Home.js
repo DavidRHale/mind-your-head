@@ -1,4 +1,5 @@
 import React from 'react';
+import Events from './Events';
 
 class Home extends React.Component {
   render() {
@@ -12,6 +13,8 @@ class Home extends React.Component {
             <button className="col btn btn-primary get-started-button">Information And Resources</button>
           </div>
         </div>
+
+        <Events />
       </div>
     )
   }
