@@ -111,8 +111,8 @@ class TrackerGraph extends React.Component {
               { this.state.showSleep ? <Line type="monotone" dataKey="sleep" stroke="#A8C94C" strokeWidth={3} dot={false}/> : '' }
               { this.state.showAnxiety ? <Line type="monotone" dataKey="anxiety" stroke="#89CBC4" strokeWidth={3} dot={false}/> : '' }
               { this.state.showExercise ? <Bar dataKey="exercise" barSize={20} fill="#FCDD5E" /> : '' }
-              <XAxis type="number" dataKey="date" tickFormatter={ this.formatXAxis } domain={ this.axisDomain() }/>
-              <YAxis type="number" domain={[0, 10]} padding={{ left: 0 }} />
+              <XAxis type="number" dataKey="date" tickFormatter={ this.formatXAxis } label="Time" domain={ this.axisDomain() }/>
+              <YAxis type="number" domain={[0, 10]} padding={{ left: 0 }} label="Ratings"/>
             </ComposedChart>
         </div>
       );
